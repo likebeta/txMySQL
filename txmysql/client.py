@@ -515,7 +515,7 @@ class ConnectionPool:
             self._unused_connections.append(conn)
             raise ex
         d = conn.runQuery(query, query_args)
-        d.addErrback(errback)
+        d.addErrback(err_back)
         return d
 
     def runOperation(self, query, query_args=None):
